@@ -1,9 +1,58 @@
 parse_cv_task:
   description: >
-    Parse the provided CV file and extract its content.
+    **Task**: Extract and structure the information from the candidate's CV.
+
+    **Instructions**:
+    1.  **Read the CV**: Access the provided CV file from the input.
+    2.  **Extract Information**: Identify and pull out all key sections, including contact details, professional summary, work history, education, certifications, skills, projects, and interests.
+    3.  **Structure the Output**: Format the extracted data into a JSON object. Ensure the output strictly follows the schema defined for a complete resume.
   expected_output: >
-    A JSON object representing the CV's content. 
-    The JSON should have the following keys: 'contact_info', 'summary', 'work_experience' (as a list of objects, each with 'job_title', 'company', 'dates', and 'responsibilities'), 'education' (as a list of objects), and 'skills' (as a list of strings).
+    A JSON object representing the CV's content. The JSON must strictly follow this structure:
+    {
+      "contact_info": {
+        "name": "Full Name",
+        "location": "City, Country",
+        "email": "email@example.com",
+        "linkedin": "https://linkedin.com/in/username",
+        "github": "https://github.com/username"
+      },
+      "summary": "A concise professional summary...",
+      "work_experience": [
+        {
+          "job_title": "Senior Developer",
+          "company_name": "Tech Company",
+          "dates": "Jan 2020 - Dec 2022",
+          "responsibilities": ["Developed feature X.", "Led a team of Y."]
+        }
+      ],
+      "education": [
+        {
+          "degree": "Bachelor of Science",
+          "university": "State University",
+          "dates": "2016 - 2020"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Certified Cloud Practitioner",
+          "score": "950/1000"
+        }
+      ],
+      "skills": {
+        "technical_tools": ["Python", "Docker", "AWS"],
+        "domain_knowledge": ["SaaS", "FinTech"],
+        "project_management": ["Agile", "Scrum"],
+        "languages": ["English", "Vietnamese"]
+      },
+      "projects": [
+        {
+          "project_name": "AI-Powered Chatbot",
+          "description": "A brief description of the project.",
+          "link": "
+        }
+      ],
+      "interests": ["Hiking", "Photography"]
+    }
   agent: cv_parser
 
 search_jobs_task:
@@ -12,7 +61,7 @@ search_jobs_task:
 
     **Instructions**:
     1.  **Analyze the CV**: Read the parsed CV from cv_parser agent to understand the candidate's skills, experience, and career objectives.
-    2.  **Search for Jobs**: Use your search tools to find job postings on platforms like VietnamWorks and TopCV. Focus on roles that are a strong match for the candidate's profile.
+    2.  **Search for Jobs**: Use your search tools to find job postings on platforms like VietnamWorks and TopCV. Focus on roles that are a strong match for the candidate's profile with most recent date (as today date is 01 August 2025).
     3.  **Evaluate and Select**: From your search results, select the top 3 to 5 most suitable job postings. A "suitable" job posting is one that aligns well with the candidate's experience.
     4.  **Compile the Findings**: Once you have identified the top 3-5 jobs, stop searching and use scrape tool to compile your findings into a a JSON object that contains a list of these jobs. Do not provide any other information in your final answer.
   expected_output: >
@@ -25,7 +74,7 @@ search_jobs_task:
           "location": "Hanoi, Vietnam",
           "job_url": "https://www.vietnamworks.com/procurement-specialist--1931531-jv",
           "description": "A brief summary of the job description, highlighting key responsibilities and requirements that match the candidate's profile.",
-          "posted_date": "2023-10-01",
+          "posted_date": "2025-07-01",
         }
       ]
     }
@@ -37,7 +86,7 @@ tailor_cv_task:
 
     **Instructions**:
     1.  **Analyze Job and CV**: For each job posting received from the `job_scout` agent, compare the job's requirements against the parsed CV from the `cv_parser` agent.
-    2.  **Highlight Relevance**: Rewrite the 'summary', 'work_experience', and 'skills' sections of the CV. Emphasize the candidate's achievements and skills that directly align with what the job description is asking for.
+    2.  **Highlight Relevance**: Rewrite the 'summary', 'work_experience', and 'skills' sections of the CV. Emphasize the candidate's achievements and skills that directly align with what the job description is asking for, improve ATS (Applicant Tracking System) compatibility.
     3.  **Maintain Structure**: Ensure that the tailored CV is a complete resume and strictly maintains the required JSON structure for a resume.
     4.  **Compile Tailored CVs**: Create a list of tailored CVs, with each entry corresponding to a specific job posting. The final output must be a single JSON object containing this list.
   expected_output: >
@@ -55,7 +104,7 @@ tailor_cv_task:
             "education": [ ... ],
             "certifications": [ ... ],
             "skills": { ... },
-            "projects": { ... },
+            "projects": [ ... ],
             "interests": [ ... ]
           }
         }
@@ -68,7 +117,7 @@ write_cover_letter_task:
     **Task**: Write a unique and persuasive cover letter for each job application.
 
     **Instructions**:
-    1.  **Synthesize Information**: For each job, use the corresponding tailored CV and the original job posting as your primary sources.
+    1.  **Synthesize Information**: For each job posting received from the `job_scout` agent, use the corresponding tailored CV and the original job posting as your primary sources.
     2.  **Draft the Letter**: Write a professional cover letter that introduces the candidate, expresses strong interest in the specific role and company, and highlights 2-3 key qualifications from the tailored CV that prove they are an excellent fit.
     3.  **Structure and Tone**: The letter should be engaging, professional, and personalized. Address the hiring manager if possible; otherwise, use a professional salutation.
     4.  **Compile Cover Letters**: Aggregate all generated cover letters into a single JSON object.

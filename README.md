@@ -124,8 +124,8 @@ Defines each task’s description, expected output schema, and execution behavio
 From the main script or interactive session:
 
 ```bash
-    # Use the following command to run the program
-    crewai run
+# Use the following command to run the program
+crewai run
 ```
 
 The agents will parse your resume, find job postings, generate tailored CVs and cover letters, and save them to `output/`.

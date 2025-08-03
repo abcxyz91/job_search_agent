@@ -1,0 +1,28 @@
+{
+  "job_postings": [
+    {
+      "job_title": "Python Developer",
+      "company_name": "TECHVIFY SOFTWARE., JSC",
+      "location": "Hanoi",
+      "job_url": "https://www.topcv.vn/viec-lam/python-developer/1813790.html",
+      "description": "At least 3 years of experience with Python (Django/FastAPI/Flask); Strong",
+      "posted_date": null
+    },
+    {
+      "job_title": "Django Web Application Developer",
+      "company_name": "BOSCH GLOBAL SOFTWARE TECHNOLOGIES",
+      "location": "Ho Chi Minh City",
+      "job_url": "https://www.topcv.vn/viec-lam/django-web-application-developer/1575056.html",
+      "description": "Strong proficiency in Django framework and Python programming language.",
+      "posted_date": null
+    },
+    {
+      "job_title": "Backend Developer (Python)",
+      "company_name": "CÔNG TY TNHH CÁC GIẢI PHÁP SOFTEL",
+      "location": "Hà Nội",
+      "job_url": "https://www.topcv.vn/viec-lam/back-end-developer-python/1668033.html",
+      "description": "Thành thạo Python và các framework phổ biến như Django, Flask hoặc FastAPI.",
+      "posted_date": null
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "tailored_cvs": [
+    {
+      "company_name": "TECHVIFY SOFTWARE., JSC",
+      "job_title": "Python Developer",
+      "job_url": "https://www.topcv.vn/viec-lam/python-developer/1813790.html",
+      "tailored_cv_content": {
+        "contact_info": {
+          "name": "John Doe",
+          "location": "New York, USA",
+          "email": "john.doe@email.com",
+          "linkedin": "https://linkedin.com/in/johndoe",
+          "github": "https://github.com/johndoe"
+        },
+        "summary": "Highly proficient Python Developer with 3+ years of experience in developing and maintaining web applications using Python and Django. Proven ability to implement RESTful APIs, integrate with third-party services, and write comprehensive unit and integration tests. Seeking a challenging Python Developer role to leverage expertise in web development and contribute to innovative projects.",
+        "work_experience": [
+          {
+            "job_title": "Software Engineer",
+            "company_name": "ABC Inc.",
+            "dates": "Jan 2021 - Present",
+            "responsibilities": [
+              "Developed and maintained web applications using Python and Django.",
+              "Implemented RESTful APIs and integrated with third-party services.",
+              "Wrote unit and integration tests to ensure code quality.",
+              "Collaborated with cross-functional teams to gather requirements and design solutions."
+            ]
+          },
+          {
+            "job_title": "Junior Developer",
+            "company_name": "XYZ Corp",
+            "dates": "Jun 2019 - Dec 2020",
+            "responsibilities": [
+              "Assisted senior developers in the development of software applications using Java and JavaScript.",
+              "Participated in code reviews and testing.",
+              "Learned and applied new technologies."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Master of Science in Computer Science",
+            "university": "Columbia University",
+            "dates": "2017 - 2019"
+          },
+          {
+            "degree": "Bachelor of Science in Computer Engineering",
+            "university": "University of California, Berkeley",
+            "dates": "2013 - 2017"
+          }
+        ],
+        "certifications": [
+          {
+            "name": "AWS Certified Solutions Architect - Associate",
+            "score": null
+          },
+          {
+            "name": "Certified ScrumMaster",
+            "score": null
+          }
+        ],
+        "skills": {
+          "technical_tools": [
+            "Python",
+            "Django",
+            "React",
+            "AWS",
+            "Docker",
+            "Git",
+            "JavaScript",
+            "Java"
+          ],
+          "domain_knowledge": [
+            "Web Development",
+            "Cloud Computing",
+            "Software Design",
+            "Agile Methodologies"
+          ],
+          "project_management": [
+            "Agile",
+            "Scrum",
+            "Kanban"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ]
+        },
+        "projects": [
+          {
+            "project_name": "E-commerce Platform",
+            "description": "Developed a full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
+            "link": "https://example.com/ecommerce"
+          },
+          {
+            "project_name": "Mobile App for Task Management",
+            "description": "Designed and developed a mobile application for task management, including features like task creation, prioritization, and reminders.",
+            "link": null
+          }
+        ],
+        "interests": [
+          "Hiking",
+          "Traveling",
+          "Photography",
+          "Reading"
+        ]
+      }
+    },
+    {
+      "company_name": "BOSCH GLOBAL SOFTWARE TECHNOLOGIES",
+      "job_title": "Django Web Application Developer",
+      "job_url": "https://www.topcv.vn/viec-lam/django-web-application-developer/1575056.html",
+      "tailored_cv_content": {
+        "contact_info": {
+          "name": "John Doe",
+          "location": "New York, USA",
+          "email": "john.doe@email.com",
+          "linkedin": "https://linkedin.com/in/johndoe",
+          "github": "https://github.com/johndoe"
+        },
+        "summary": "Experienced Django Web Application Developer with a strong foundation in Python and extensive experience building and maintaining web applications. Proven ability to develop and implement RESTful APIs and integrate with third-party services. Seeking a challenging role to leverage Django expertise and contribute to innovative web projects.",
+        "work_experience": [
+          {
+            "job_title": "Software Engineer",
+            "company_name": "ABC Inc.",
+            "dates": "Jan 2021 - Present",
+            "responsibilities": [
+              "Developed and maintained web applications using Python and Django.",
+              "Implemented RESTful APIs and integrated with third-party services.",
+              "Wrote unit and integration tests to ensure code quality.",
+              "Collaborated with cross-functional teams to gather requirements and design solutions."
+            ]
+          },
+          {
+            "job_title": "Junior Developer",
+            "company_name": "XYZ Corp",
+            "dates": "Jun 2019 - Dec 2020",
+            "responsibilities": [
+              "Assisted senior developers in the development of software applications.",
+              "Wrote code in Java and JavaScript.",
+              "Participated in code reviews and testing.",
+              "Learned and applied new technologies."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Master of Science in Computer Science",
+            "university": "Columbia University",
+            "dates": "2017 - 2019"
+          },
+          {
+            "degree": "Bachelor of Science in Computer Engineering",
+            "university": "University of California, Berkeley",
+            "dates": "2013 - 2017"
+          }
+        ],
+        "certifications": [
+          {
+            "name": "AWS Certified Solutions Architect - Associate",
+            "score": null
+          },
+          {
+            "name": "Certified ScrumMaster",
+            "score": null
+          }
+        ],
+        "skills": {
+          "technical_tools": [
+            "Python",
+            "Django",
+            "JavaScript",
+            "React",
+            "AWS",
+            "Docker",
+            "Git",
+            "Java"
+          ],
+          "domain_knowledge": [
+            "Web Development",
+            "Cloud Computing",
+            "Software Design",
+            "Agile Methodologies"
+          ],
+          "project_management": [
+            "Agile",
+            "Scrum",
+            "Kanban"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ]
+        },
+        "projects": [
+          {
+            "project_name": "E-commerce Platform",
+            "description": "Developed a full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
+            "link": "https://example.com/ecommerce"
+          },
+          {
+            "project_name": "Mobile App for Task Management",
+            "description": "Designed and developed a mobile application for task management, including features like task creation, prioritization, and reminders.",
+            "link": null
+          }
+        ],
+        "interests": [
+          "Hiking",
+          "Traveling",
+          "Photography",
+          "Reading"
+        ]
+      }
+    },
+    {
+      "company_name": "CÔNG TY TNHH CÁC GIẢI PHÁP SOFTEL",
+      "job_title": "Backend Developer (Python)",
+      "job_url": "https://www.topcv.vn/viec-lam/back-end-developer-python/1668033.html",
+      "tailored_cv_content": {
+        "contact_info": {
+          "name": "John Doe",
+          "location": "New York, USA",
+          "email": "john.doe@email.com",
+          "linkedin": "https://linkedin.com/in/johndoe",
+          "github": "https://github.com/johndoe"
+        },
+        "summary": "Highly skilled Backend Developer proficient in Python and experienced with frameworks like Django. Proven ability to develop and maintain robust backend systems, implement RESTful APIs, and integrate with third-party services. Seeking a Backend Developer role to contribute to the development of scalable and efficient applications.",
+        "work_experience": [
+          {
+            "job_title": "Software Engineer",
+            "company_name": "ABC Inc.",
+            "dates": "Jan 2021 - Present",
+            "responsibilities": [
+              "Developed and maintained web applications using Python and Django.",
+              "Implemented RESTful APIs and integrated with third-party services.",
+              "Wrote unit and integration tests to ensure code quality.",
+              "Collaborated with cross-functional teams to gather requirements and design solutions."
+            ]
+          },
+          {
+            "job_title": "Junior Developer",
+            "company_name": "XYZ Corp",
+            "dates": "Jun 2019 - Dec 2020",
+            "responsibilities": [
+              "Assisted senior developers in the development of software applications.",
+              "Wrote code in Java and JavaScript.",
+              "Participated in code reviews and testing.",
+              "Learned and applied new technologies."
+            ]
+          }
+        ],
+        "education": [
+          {
+            "degree": "Master of Science in Computer Science",
+            "university": "Columbia University",
+            "dates": "2017 - 2019"
+          },
+          {
+            "degree": "Bachelor of Science in Computer Engineering",
+            "university": "University of California, Berkeley",
+            "dates": "2013 - 2017"
+          }
+        ],
+        "certifications": [
+          {
+            "name": "AWS Certified Solutions Architect - Associate",
+            "score": null
+          },
+          {
+            "name": "Certified ScrumMaster",
+            "score": null
+          }
+        ],
+        "skills": {
+          "technical_tools": [
+            "Python",
+            "Django",
+            "JavaScript",
+            "React",
+            "AWS",
+            "Docker",
+            "Git",
+            "Java"
+          ],
+          "domain_knowledge": [
+            "Web Development",
+            "Cloud Computing",
+            "Software Design",
+            "Agile Methodologies"
+          ],
+          "project_management": [
+            "Agile",
+            "Scrum",
+            "Kanban"
+          ],
+          "languages": [
+            "English",
+            "Spanish"
+          ]
+        },
+        "projects": [
+          {
+            "project_name": "E-commerce Platform",
+            "description": "Developed a full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment gateway integration.",
+            "link": "https://example.com/ecommerce"
+          },
+          {
+            "project_name": "Mobile App for Task Management",
+            "description": "Designed and developed a mobile application for task management, including features like task creation, prioritization, and reminders.",
+            "link": null
+          }
+        ],
+        "interests": [
+          "Hiking",
+          "Traveling",
+          "Photography",
+          "Reading"
+        ]
+      }
+    }
+  ]
+}
