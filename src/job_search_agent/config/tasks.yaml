@@ -1,0 +1,88 @@
+parse_cv_task:
+  description: >
+    Parse the provided CV file and extract its content.
+  expected_output: >
+    A JSON object representing the CV's content. 
+    The JSON should have the following keys: 'contact_info', 'summary', 'work_experience' (as a list of objects, each with 'job_title', 'company', 'dates', and 'responsibilities'), 'education' (as a list of objects), and 'skills' (as a list of strings).
+  agent: cv_parser
+
+search_jobs_task:
+  description: >
+    **Task**: Find and compile a list of 3-5 relevant job postings for a candidate based on their CV.
+
+    **Instructions**:
+    1.  **Analyze the CV**: Read the parsed CV from cv_parser agent to understand the candidate's skills, experience, and career objectives.
+    2.  **Search for Jobs**: Use your search tools to find job postings on platforms like VietnamWorks and TopCV. Focus on roles that are a strong match for the candidate's profile.
+    3.  **Evaluate and Select**: From your search results, select the top 3 to 5 most suitable job postings. A "suitable" job posting is one that aligns well with the candidate's experience.
+    4.  **Compile the Findings**: Once you have identified the top 3-5 jobs, stop searching and use scrape tool to compile your findings into a a JSON object that contains a list of these jobs. Do not provide any other information in your final answer.
+  expected_output: >
+    A JSON object containing a list of job postings. The JSON object must follow this exact structure:
+    {
+      "job_postings": [
+        {
+          "job_title": "Procurement Specialist",
+          "company": "Panasonic Vietnam",
+          "location": "Hanoi, Vietnam",
+          "job_url": "https://www.vietnamworks.com/procurement-specialist--1931531-jv",
+          "description": "A brief summary of the job description, highlighting key responsibilities and requirements that match the candidate's profile.",
+          "posted_date": "2023-10-01",
+        }
+      ]
+    }
+  agent: job_scout
+
+tailor_cv_task:
+  description: >
+    **Task**: Customize the candidate's base CV for each selected job posting.
+
+    **Instructions**:
+    1.  **Analyze Job and CV**: For each job posting received from the `job_scout` agent, compare the job's requirements against the parsed CV from the `cv_parser` agent.
+    2.  **Highlight Relevance**: Rewrite the 'summary', 'work_experience', and 'skills' sections of the CV. Emphasize the candidate's achievements and skills that directly align with what the job description is asking for.
+    3.  **Maintain Structure**: Ensure that the tailored CV is a complete resume and strictly maintains the required JSON structure for a resume.
+    4.  **Compile Tailored CVs**: Create a list of tailored CVs, with each entry corresponding to a specific job posting. The final output must be a single JSON object containing this list.
+  expected_output: >
+    A single JSON object containing a list of all tailored CVs. The JSON must strictly follow this structure:
+    {
+      "tailored_cvs": [
+        {
+          "company_name": "Panasonic Vietnam",
+          "job_title": "Procurement Specialist",
+          "job_url": "https://www.vietnamworks.com/procurement-specialist--1931531-jv",
+          "tailored_cv_content": {
+            "contact_info": { ... },
+            "summary": "A new summary tailored for the job posting role...",
+            "work_experience": [ ... ],
+            "education": [ ... ],
+            "certifications": [ ... ],
+            "skills": { ... },
+            "projects": { ... },
+            "interests": [ ... ]
+          }
+        }
+      ]
+    }
+  agent: cv_tailor
+
+write_cover_letter_task:
+  description: >
+    **Task**: Write a unique and persuasive cover letter for each job application.
+
+    **Instructions**:
+    1.  **Synthesize Information**: For each job, use the corresponding tailored CV and the original job posting as your primary sources.
+    2.  **Draft the Letter**: Write a professional cover letter that introduces the candidate, expresses strong interest in the specific role and company, and highlights 2-3 key qualifications from the tailored CV that prove they are an excellent fit.
+    3.  **Structure and Tone**: The letter should be engaging, professional, and personalized. Address the hiring manager if possible; otherwise, use a professional salutation.
+    4.  **Compile Cover Letters**: Aggregate all generated cover letters into a single JSON object.
+  expected_output: >
+    A single JSON object that contains a list of all tailored cover letters. The JSON must strictly follow this structure:
+    {
+      "tailored_cover_letters": [
+        {
+          "company_name": "Panasonic Vietnam",
+          "job_title": "Procurement Specialist",
+          "job_url": "https://www.vietnamworks.com/procurement-specialist--1931531-jv",
+          "cover_letter_content": "Dear Hiring Manager at Panasonic Vietnam,\n\nI am writing to express my enthusiastic interest in the Procurement Specialist position... My experience in [Relevant Skill/Experience 1] and my success in [Relevant Skill/Experience 2] as detailed in my attached CV make me a strong candidate to contribute to your team..."
+        }
+      ]
+    }
+  agent: cover_letter_writer
+
