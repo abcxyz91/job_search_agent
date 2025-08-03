@@ -31,7 +31,7 @@ You must supply your real, valid resume in the `input/` folder. The system enhan
 │ │ ├── agents.yaml 
 │ │ └── tasks.yaml 
 │ └── tools/ 
-│ └── custom_tool.py 
+│     └── custom_tool.py # Custom tools for agents
 ├── pyproject.toml # Project metadata and dependencies 
 ├── .env # Environment variables (API keys, model names) 
 ├── README.md # Project documentation 
@@ -50,10 +50,12 @@ You must supply your real, valid resume in the `input/` folder. The system enhan
 [ Search Jobs Agent ] ← Web scraping and search APIs
       │
       ▼
-[ Tailor CV Agent ]
-      │
-      ▼
-[ Cover Letter Agent ]
+ ┌─────────────────────────────┐
+ │                             │
+ │ [ Tailor CV Agent ]         │
+ │ [ Cover Letter Agent ]      │
+ │   (run in parallel)         │
+ └─────────────────────────────┘
       │
       ▼
 [ Output Organizer ] → Structured folders + Word documents
@@ -78,7 +80,7 @@ Place your resume inside the `input/` directory. Supported file types:
 
 2. **Install dependencies:**
    ```bash
-   # Install Python >= 3.10, < 3.13
+   # Install Python >= 3.10
     https://www.python.org/downloads/
 
     # Install uv package manager
@@ -104,8 +106,8 @@ Place your resume inside the `input/` directory. Supported file types:
    SERPER_API_KEY=your-serper-api-key
    ```
 
-    - Google Gemini API key (register free from [Google AI Studio](https://aistudio.google.com/apikey))
-    - Serper.dev API key (register free from [serper.dev](https://serper.dev/api-key))
+- Google Gemini API key (register free from [Google AI Studio](https://aistudio.google.com/apikey))
+- Serper.dev API key (register free from [serper.dev](https://serper.dev/api-key))
 
 4. **Add your resume:**
 
