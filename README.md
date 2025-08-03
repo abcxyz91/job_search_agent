@@ -18,7 +18,7 @@ You must supply your real, valid resume in the `input/` folder. The system enhan
 
 ## 📁 Project Structure
 
-\`\`\`bash
+```bash
 . 
 ├── input/ # Place your CV file here (.pdf, .docx, .txt, .md) 
 ├── output/ # Generated output files and organized folders 
@@ -36,11 +36,11 @@ You must supply your real, valid resume in the `input/` folder. The system enhan
 ├── .env # Environment variables (API keys, model names) 
 ├── README.md # Project documentation 
 
-\`\`\`
+```
 
 ## 🧠 Workflow Overview
 
-\`\`\`text
+```text
 [ Resume File ]
       │
       ▼
@@ -57,7 +57,7 @@ You must supply your real, valid resume in the `input/` folder. The system enhan
       │
       ▼
 [ Output Organizer ] → Structured folders + Word documents
-\`\`\`
+```
 
 ## 🧪 Supported Input Formats
 
@@ -71,13 +71,13 @@ Place your resume inside the `input/` directory. Supported file types:
 ## 📦 Setup Instructions
 
 1. **Clone the repository:**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/abcxyz91/job_search_agent
    cd job_search_agent
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
-   \`\`\`bash
+   ```bash
    # Install Python >= 3.10, < 3.13
     https://www.python.org/downloads/
 
@@ -92,17 +92,17 @@ Place your resume inside the `input/` directory. Supported file types:
 
     # Install dependencies
     crewai install
-   \`\`\`
+   ```
 
 3. **Set up environment variables:**
 
    Create a `.env` file in the root directory:
 
-   \`\`\`env
+   ```env
    MODEL=generation-model-name
    GEMINI_API_KEY=your-gemini-api-key
    SERPER_API_KEY=your-serper-api-key
-   \`\`\`
+   ```
 
     - Google Gemini API key (register free from [Google AI Studio](https://aistudio.google.com/apikey))
     - Serper.dev API key (register free from [serper.dev](https://serper.dev/api-key))
@@ -123,10 +123,10 @@ Defines each task’s description, expected output schema, and execution behavio
 
 From the main script or interactive session:
 
-\`\`\`bash
+```bash
     # Use the following command to run the program
     crewai run
-\`\`\`
+```
 
 The agents will parse your resume, find job postings, generate tailored CVs and cover letters, and save them to `output/`.
 
@@ -134,20 +134,20 @@ The agents will parse your resume, find job postings, generate tailored CVs and 
 
 For a job at **Google** as a **Data Scientist**, this folder will be created:
 
-\`\`\`
+```
 output/Google-Data_Scientist/
 ├── cv.docx
 └── cover_letter.docx
-\`\`\`
+```
 
 ## 🧰 Tools Used
 
-- \`crewAI\` for orchestrating agents and tasks
-- \`Google Gemini API\` for LLM tasks
-- \`pdfplumber\`, \`python-docx\` for parsing and writing documents
-- \`Serper.dev API\`, \`BeautifulSoup4\` for job search and scrape
-- \`pydantic\` for strict schema validation
-- \`dotenv\` for environment variable management
+- `crewAI` for orchestrating agents and tasks
+- `Google Gemini API` for LLM tasks
+- `pdfplumber`, `python-docx` for parsing and writing documents
+- `Serper.dev API`, `BeautifulSoup4` for job search and scrape
+- `pydantic` for strict schema validation
+- `dotenv` for environment variable management
 
 ## 📌 Notes
 
@@ -157,7 +157,7 @@ output/Google-Data_Scientist/
 
 ## 📄 License
 
-MIT License. See \`LICENSE\` file for details.
+MIT License. See `LICENSE` file for details.
 
 ## 🤝 Contributing
 
