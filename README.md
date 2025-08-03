@@ -1,54 +1,164 @@
-# JobSearchAgent Crew
+# 🎯 Job Search Automation Crew
 
-Welcome to the JobSearchAgent Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+This project automates the job application process using an agent-based architecture powered by [CrewAI](https://github.com/joaomdmoura/crewAI). It parses a user's resume, finds matching job listings online, generates tailored CVs and personalized cover letters, and organizes the output in a structured folder format.
 
-## Installation
+## ⚠️ Disclaimer
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+This tool **does not fabricate or generate** your resume from scratch. It only **rewrites your existing CV** to better align with specific job descriptions and improve **ATS (Applicant Tracking System)** compatibility.
 
-First, if you haven't already, install uv:
+You must supply your real, valid resume in the `input/` folder. The system enhances it based on real job postings, but **does not invent experience, skills, or credentials**.
 
-```bash
-pip install uv
-```
+## 🚀 Features
 
-Next, navigate to your project directory and install the dependencies:
+- ✅ **CV Parsing** from `.pdf`, `.docx`, `.txt`, or `.md`
+- 🌍 **Job Search** using Serper.dev and website scraping tools
+- ✍️ **Tailored CV and Cover Letter Generator** aligned with job descriptions
+- 📂 **Organized Output** in per-company/job-title folders
+- 🤖 Fully modular agents and task definitions via YAML
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+## 📁 Project Structure
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+\`\`\`bash
+. 
+├── input/ # Place your CV file here (.pdf, .docx, .txt, .md) 
+├── output/ # Generated output files and organized folders 
+├── src/ 
+│ └── job_search_agent/ 
+│ ├── crew.py # Main crewAI agent/task definitions 
+│ ├── main.py # Entrypoint for running/training/testing the crew 
+│ ├── schemas.py # Pydantic models for structured data 
+│ ├── config/ 
+│ │ ├── agents.yaml 
+│ │ └── tasks.yaml 
+│ └── tools/ 
+│ └── custom_tool.py 
+├── pyproject.toml # Project metadata and dependencies 
+├── .env # Environment variables (API keys, model names) 
+├── README.md # Project documentation 
 
-- Modify `src/job_search_agent/config/agents.yaml` to define your agents
-- Modify `src/job_search_agent/config/tasks.yaml` to define your tasks
-- Modify `src/job_search_agent/crew.py` to add your own logic, tools and specific args
-- Modify `src/job_search_agent/main.py` to add custom inputs for your agents and tasks
+\`\`\`
 
-## Running the Project
+## 🧠 Workflow Overview
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+\`\`\`text
+[ Resume File ]
+      │
+      ▼
+[ CV Parser Agent ]
+      │
+      ▼
+[ Search Jobs Agent ] ← Web scraping and search APIs
+      │
+      ▼
+[ Tailor CV Agent ]
+      │
+      ▼
+[ Cover Letter Agent ]
+      │
+      ▼
+[ Output Organizer ] → Structured folders + Word documents
+\`\`\`
 
-```bash
-$ crewai run
-```
+## 🧪 Supported Input Formats
 
-This command initializes the job-search-agent Crew, assembling the agents and assigning them tasks as defined in your configuration.
+Place your resume inside the `input/` directory. Supported file types:
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+- `.pdf`
+- `.docx`
+- `.txt`
+- `.md`
 
-## Understanding Your Crew
+## 📦 Setup Instructions
 
-The job-search-agent Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+1. **Clone the repository:**
+   \`\`\`bash
+   git clone https://github.com/abcxyz91/job_search_agent
+   cd job_search_agent
+   \`\`\`
 
-## Support
+2. **Install dependencies:**
+   \`\`\`bash
+   # Install Python >= 3.10, < 3.13
+    https://www.python.org/downloads/
 
-For support, questions, or feedback regarding the JobSearchAgent Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+    # Install uv package manager
+    https://docs.astral.sh/uv/getting-started/installation/
 
-Let's create wonders together with the power and simplicity of crewAI.
+    # Install crewai
+    uv tool install crewai
+
+    # Refer to crewai installation guide if you encounter errors
+    https://docs.crewai.com/installation
+
+    # Install dependencies
+    crewai install
+   \`\`\`
+
+3. **Set up environment variables:**
+
+   Create a `.env` file in the root directory:
+
+   \`\`\`env
+   MODEL=generation-model-name
+   GEMINI_API_KEY=your-gemini-api-key
+   SERPER_API_KEY=your-serper-api-key
+   \`\`\`
+
+    - Google Gemini API key (register free from [Google AI Studio](https://aistudio.google.com/apikey))
+    - Serper.dev API key (register free from [serper.dev](https://serper.dev/api-key))
+
+4. **Add your resume:**
+
+   Place your resume inside the `input/` folder using one of the supported formats.
+
+## ⚙️ Configuration
+
+### 🔹 Agent Config (`agents.yaml`)
+Defines each agent's personality, goals, and tools.
+
+### 🔹 Task Config (`tasks.yaml`)
+Defines each task’s description, expected output schema, and execution behavior.
+
+## 🛠️ How to Run
+
+From the main script or interactive session:
+
+\`\`\`bash
+    # Use the following command to run the program
+    crewai run
+\`\`\`
+
+The agents will parse your resume, find job postings, generate tailored CVs and cover letters, and save them to `output/`.
+
+## 🧾 Output Example
+
+For a job at **Google** as a **Data Scientist**, this folder will be created:
+
+\`\`\`
+output/Google-Data_Scientist/
+├── cv.docx
+└── cover_letter.docx
+\`\`\`
+
+## 🧰 Tools Used
+
+- \`crewAI\` for orchestrating agents and tasks
+- \`Google Gemini API\` for LLM tasks
+- \`pdfplumber\`, \`python-docx\` for parsing and writing documents
+- \`Serper.dev API\`, \`BeautifulSoup4\` for job search and scrape
+- \`pydantic\` for strict schema validation
+- \`dotenv\` for environment variable management
+
+## 📌 Notes
+
+- Ensure your API keys are valid before execution.
+- The first valid resume file in the `input/` directory will be used.
+- Outputs are structured to match each job application.
+
+## 📄 License
+
+MIT License. See \`LICENSE\` file for details.
+
+## 🤝 Contributing
+
+Contributions, issue reports, and feature suggestions are welcome.
